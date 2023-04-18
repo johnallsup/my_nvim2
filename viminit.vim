@@ -16,7 +16,15 @@ set cmdheight=2
 
 inoremap jk <esc>
 inoremap JK <esc>
-source ~/.vim/arsehole.vim
+
+" force you to learn hjkl
+" inoremap <esc> <nop>
+inoremap <c-c> <nop>
+nnoremap <left> <nop>
+nnoremap <right> <nop>
+nnoremap <up> <nop>
+nnoremap <down> <nop>
+
 
 nnoremap wr :set wrap<cr>
 nnoremap nw :set nowrap<cr>

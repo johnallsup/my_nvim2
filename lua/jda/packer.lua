@@ -1,5 +1,7 @@
 -- This file can be loaded by calling `lua require('plugins')` from your init.vim
 
+local nr = { noremap = true }
+vim.keymap.set("n","<leader>pu", ":PackerUpdate<cr>", nr)
 -- Only required if you have packer configured as `opt`
 vim.cmd.packadd('packer.nvim')
 

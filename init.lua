@@ -1,7 +1,7 @@
 vim.cmd('let mapleader = " "')
 require("jda")
 
-vim.cmd('source ~/.config/nvim/viminit.vim')
+vim.cmd('source '..vim.fn.stdpath("config")..'/viminit.vim')
 
 -- local local.vim or local.lua in project root
 local llfn = "./local.lua"
