@@ -16,7 +16,7 @@ vim.opt.smartindent = true
 
 vim.opt.wrap = false
 
-vim.opt.swapfile = false
+vim.opt.swapfile = true -- false
 vim.opt.backup = false
 vim.opt.undodir = os.getenv("HOME") .. "/.vimundo/"
 vim.opt.undofile = true
