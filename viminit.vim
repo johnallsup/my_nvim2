@@ -12,6 +12,7 @@ set cursorline
 set shiftround
 highlight CursorLine gui=underline
 autocmd FileType html :source ~/.vim/html.vim
+autocmd FileType tex :source ~/.vim/latex.vim
 autocmd FileType javascript :source ~/.vim/js.vim
 autocmd BufRead,BufNewFile *.md :source ~/.config/nvim/markdown.vim
 autocmd BufRead,BufNewFile *.md :setf markdown
