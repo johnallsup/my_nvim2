@@ -6,8 +6,6 @@ set shiftwidth=2
 set tabstop=2
 let @a = 'yyp:s/./=/g'
 let @c = '@a/^\D'
-"hi CursorLine   cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
-"hi CursorColumn cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
 set cursorline
 set shiftround
 highlight CursorLine gui=underline
@@ -66,8 +64,8 @@ nnoremap <leader>config :tabedit ~/.config/nvim<cr>
 
 set formatoptions-=cro
 
-highlight LineNr guibg=darkblue guifg=white
-highlight CursorLineNr guibg=darkred guifg=white
+"highlight LineNr guibg=darkblue guifg=white
+"highlight CursorLineNr guibg=darkred guifg=white
 highlight Folded guibg=darkblue
 highlight Tabline guifg=black
 highlight CursorLine guibg=black
@@ -78,3 +76,8 @@ nnoremap <leader>crr :set formatoptions+=cro<cr>:echom "Enabled cro"<cr>
 nnoremap <A-n> 1n
 " nnoremap <leader>S /^\/\*\*\*<cr> 
 " nnoremap <leader>is 0i/*** X ***/<esc>FXxi
+
+nnoremap \px "zyiw:let @z=system('get ' . @z)<cr>
+nnoremap \pz "zyiw:let @z=system('echo "${' . @z . '}"')<cr>
+nnoremap J gj
+nnoremap K gk
