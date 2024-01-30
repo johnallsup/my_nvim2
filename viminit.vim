@@ -79,5 +79,30 @@ nnoremap <A-n> 1n
 
 nnoremap \px "zyiw:let @z=system('get ' . @z)<cr>
 nnoremap \pz "zyiw:let @z=system('echo "${' . @z . '}"')<cr>
-nnoremap J gj
-nnoremap K gk
+
+function JKToggle()
+  if s:jkmapped == 1
+    call JKNormal()
+  else
+    call JKMoves()
+  endif
+endfunction
+
+function JKMoves() 
+  nnoremap J gj
+  nnoremap K gk
+  let s:jkmapped = 1
+endfunction
+
+function JKNormal()
+  if maparg("J") != ""
+    unmap J
+  endif
+  if maparg("K") != ""
+    unmap K
+  endif
+  let s:jkmapped = 0
+endfunction
+call JKNormal()
+
+nnoremap \jkl :call JKToggle()<cr>
