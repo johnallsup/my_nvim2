@@ -13,5 +13,7 @@ osc:add_handler("/bobbins", vim.schedule_wrap(function(data)
   end)
 )
 
+jda_osc = osc
+
 -- open the OSC server
 osc:open()
