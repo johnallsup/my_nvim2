@@ -13,7 +13,9 @@ autocmd FileType html :source ~/.vim/html.vim
 autocmd FileType tex :source ~/.vim/latex.vim
 autocmd FileType javascript :source ~/.vim/js.vim
 autocmd BufRead,BufNewFile *.md :source ~/.config/nvim/markdown.vim
+autocmd BufRead,BufNewFile *.ptmd :source ~/.config/nvim/markdown.vim
 autocmd BufRead,BufNewFile *.md :setf markdown
+autocmd BufRead,BufNewFile *.ptmd :setf markdown
 autocmd BufRead,BufNewFile *.stuff set filetype=bash
 autocmd BufRead,BufNewFile * :set formatoptions-=cro
 set relativenumber
@@ -104,5 +106,32 @@ function JKNormal()
   let s:jkmapped = 0
 endfunction
 call JKNormal()
+function! JdaNarrowN(n)
+  set wrapmargin=0
+  set formatoptions+=t
+  set linebreak
+  execute 'set textwidth=' . a:n
+  execute 'set colorcolumn=' . a:n
+endfunction
+
+function! JdaNarrow()
+  call JdaNarrowN(40)
+endfunction
+
+function! JdaNotNarrow()
+  set textwidth=0
+  set wrapmargin=0
+  set wrap 
+  set formatoptions-=t
+  set linebreak
+  set colorcolumn=0
+endfunction
+nnoremap \narn :call JdaNotNarrow()<cr>
+nnoremap \nar3 :call JdaNarrowN(30)<cr>
+nnoremap \nar4 :call JdaNarrowN(40)<cr>
+nnoremap \nar5 :call JdaNarrowN(50)<cr>
+nnoremap \nar6 :call JdaNarrowN(60)<cr>
+nnoremap \nar7 :call JdaNarrowN(70)<cr>
+nnoremap \nar8 :call JdaNarrowN(80)<cr>
 
 nnoremap \jkl :call JKToggle()<cr>

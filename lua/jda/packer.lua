@@ -12,15 +12,15 @@ return require('packer').startup(function(use)
   })
   use("folke/zen-mode.nvim")
   use("mbbill/undotree")
-  use 'nvim-tree/nvim-web-devicons'
-  use {
-    'nvim-tree/nvim-tree.lua',
-    requires = {
-      'nvim-tree/nvim-web-devicons', -- optional
-    },
-    config = function()
-      require("nvim-tree").setup {}
-    end
-  }
+--  use 'nvim-tree/nvim-web-devicons'
+--  use {
+--    'nvim-tree/nvim-tree.lua',
+--    requires = {
+--      'nvim-tree/nvim-web-devicons', -- optional
+--    },
+--    config = function()
+--      require("nvim-tree").setup {}
+--    end
+--  }
   use "nvim-lua/plenary.nvim" -- don't forget to add this one if you don't have it yet!
 end)
